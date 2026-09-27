@@ -1,0 +1,11 @@
+import type { AuthenticatedUser } from "../models/user.model";
+
+declare global {
+  namespace Express {
+    interface Request {
+      user?: AuthenticatedUser;
+    }
+  }
+}
+
+export {};
