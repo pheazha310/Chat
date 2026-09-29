@@ -15,11 +15,8 @@ export function Sidebar() {
   const onlineCount = useUserStore((state) => state.onlineIds.size);
 
   useEffect(() => {
-    const { loaded, loading } = useUserStore.getState();
-    if (!loaded && !loading) {
-      void useUserStore.getState().loadUsers();
-    }
-  }, [loaded, loading]);
+    void useUserStore.getState().loadUsers();
+  }, []);
 
   return (
     <div className="flex h-full flex-col bg-slate-50/80">
